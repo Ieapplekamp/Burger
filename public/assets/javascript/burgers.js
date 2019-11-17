@@ -1,11 +1,11 @@
 $(function() {
   
-    $("#submitButton").on("submit", function(event) {
+    $("#submitButton").on("click", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
       var newBurger = {
-        name: $("#burgerName").val().trim()
+        name: $("#burgerName").val()
       };
       
       // Send the POST request.
