@@ -5,8 +5,9 @@ $(function() {
       event.preventDefault();
   
       var newBurger = {
-        name: $("#burgerName").val()
+        name: $("#burgerNew").val()
       };
+        console.log(newBurger);
       
       // Send the POST request.
       $.ajax("/api/burgers", {

@@ -48,15 +48,18 @@ var orm = {
 
         queryString += " (";
         queryString += cols.toString();
-        queryString += " )";
+        queryString += ") ";
         queryString += "VALUES (";
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
 
         console.log(queryString);
+        
 
-        connection.query(queryString, vals, function(err, result) {
+        connection.query(queryString, vals, function (err, result) {
+            console.log(result);
             if (err) {
+                console.log('error');
                 throw err;
             }
             cb(result);
