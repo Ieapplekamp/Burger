@@ -1,0 +1,56 @@
+<div class='jumbotron text-center'>
+    <h1>Difficult Fucking Burger App</h1>
+</div>
+
+<div class='container'>
+    
+    <div class='row'>
+        <div class='col-4'>
+            <form class='create-form'>
+                <div class='input-group mb-4'>
+                    <input type='text' name='name' class='form-control' id='burg' placeholder='Add Your Burger Here!' aria-label='Add Your Burger' aria-describedby='button-addon2'>
+                    <div class='input-group-append'>
+                        <button type='submit' class='btn' id='add-burger'>
+                            Button
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class='row'>
+
+        <div class='col-6 text-center'>
+            <div class='card'>
+                <h3 class='card-header text-center'>Burgers To Eat<br>(Click To Eat)</h3>
+                    <div class='card-body'>
+                        <ul style='list-style-type: none;'> 
+                            {{#each burgers}}
+                                {{#unless devoured}}
+                                    
+                                {{/unless}}
+                            {{/each}}
+                        </ul>
+                    </div>
+            </div>
+        </div>
+
+        <div class='col-6 text-center'>
+            <div class='card'>
+                <h3 class='card-header text-center'>Devoured Burgers<br>(Click To Delete)</h3>
+                <div class='card-body'>
+                    <ul style='list-style-type: none;'>
+                    {{#each burgers}}
+                        {{#if devoured}}
+                            
+                        {{/if}}
+                    {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
