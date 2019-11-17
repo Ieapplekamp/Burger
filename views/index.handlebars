@@ -8,9 +8,9 @@
         <div class='col-4'>
             <form class='create-form'>
                 <div class='input-group mb-4'>
-                    <input type='text' name='name' class='form-control' id='' placeholder='Add Your Burger Here!' aria-label='Add Your Burger' aria-describedby='button-addon2'>
+                    <input type='text' name='name' class='form-control' id='burgerNew' placeholder='Add Your Burger Here!' aria-label='Add Your Burger' aria-describedby='button-addon2'>
                     <div class='input-group-append'>
-                        <button type='submit' class='btn' id=''>
+                        <button type='submit' class='btn' id='submitButton'>
                             Button
                         </button>
                     </div>
@@ -23,12 +23,12 @@
 
         <div class='col-6 text-center'>
             <div class='card'>
-                <h3 class='card-header text-center'>Burgers To Eat<br>(Click To Eat)</h3>
+                <h3 class='card-header text-center'>Burgers To Eat</h3>
                     <div class='card-body'>
                         <ul style='list-style-type: none;'> 
                             {{#each burgers}}
                                 {{#unless devoured}}
-                                    
+                                    {{> burgersFile/burgers-section devoured=false}}
                                 {{/unless}}
                             {{/each}}
                         </ul>
@@ -38,12 +38,12 @@
 
         <div class='col-6 text-center'>
             <div class='card'>
-                <h3 class='card-header text-center'>Devoured Burgers<br>(Click To Delete)</h3>
+                <h3 class='card-header text-center'>Devoured Burgers</h3>
                 <div class='card-body'>
                     <ul style='list-style-type: none;'>
                     {{#each burgers}}
                         {{#if devoured}}
-                            
+                            {{> burgersFile/burgers-section devoured=true}}
                         {{/if}}
                     {{/each}}
                     </ul>
