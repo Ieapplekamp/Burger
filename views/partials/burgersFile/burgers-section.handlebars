@@ -1,19 +1,10 @@
 
-{{#if devoured}}
 <li>
-    <h5> {{ burger_name }} <button type="button" class="redo-burger btn" data-id="{{id}}" data-name="{{burger_name}}">
-        
+	{{burger_name}}
+    {{#unless devoured}}
+    <button class="devoured" data-id="{{id}}" data-newdevoured="true">
+        EAT ME!
     </button>
-    </h5>
+
+	{{/unless}}
 </li>
-
-
-{{else}}
-<li>
-    <button type="btn" class="change-devoured btn" data-id="{{id}}" data-name="{{burger_name}}"> {{ burger_name }} 
-        
-    </button>
-</li>
-<br>
-
-{{/if}}
