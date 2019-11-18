@@ -1,17 +1,17 @@
-<div class='jumbotron text-center'>
-    <h1>Difficult Fucking Burger App</h1>
+<div class='container jumbotron text-center'>
+    <h1>Order Up!</h1>
 </div>
 
 <div class='container'>
 
-    <div class='row'>
-        <div class='col-4'>
+    <div class='row d-flex justify-content-center'>
+        <div class='col-6 align-items-center'>
             <form class='create-form'>
                 <div class='input-group mb-4'>
                     <input type='text' name='name' class='form-control' id='burgerNew' placeholder='Add Your Burger Here!' aria-label='Add Your Burger' aria-describedby='button-addon2'>
                     <div class='input-group-append'>
                         <button type='submit' class='btn' id='submitButton'>
-                            Button
+                           <i class="fas fa-concierge-bell"></i>
                         </button>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
             <div class='card'>
                 <h3 class='card-header text-center'>Burgers To Eat</h3>
                     <div class='card-body'>
-                        <ul style='list-style-type: none;'> 
+                        <ul> 
                             {{#each burgers}}
                                 {{#unless devoured}}
                                     {{> burgersFile/burgers-section devoured=false}}
@@ -39,15 +39,15 @@
         <div class='col-6 text-center'>
             <div class='card'>
                 <h3 class='card-header text-center'>Devoured Burgers</h3>
-                <div class='card-body'>
-                    <ul style='list-style-type: none;'>
-                    {{#each burgers}}
-                        {{#if devoured}}
-                            {{> burgersFile/burgers-section devoured=true}}
-                        {{/if}}
-                    {{/each}}
-                    </ul>
-                </div>
+                    <div class='card-body'>
+                        <ul>
+                            {{#each burgers}}
+                                {{#if devoured}}
+                                    {{> burgersFile/burgers-section devoured=true}}
+                                {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
             </div>
         </div>
 

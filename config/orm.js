@@ -10,7 +10,7 @@ function printQuestionMarks(num) {
     return arr.toString();
 }
 
-// Helper function to convert object key/value pairs to SQL syntax
+// Function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
     var arr = [];
 
@@ -32,7 +32,7 @@ function objToSql(ob) {
     return arr.toString();
 }
 
-// Functions for SQL syntax, (1) selectAll, (2) insertOne, (3) updateOne
+// Functions for SQL syntax
 var orm = {
     selectAll: function(input, cb) {
         var queryString = "SELECT * FROM " + input + ";"
@@ -53,13 +53,8 @@ var orm = {
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
 
-        console.log(queryString);
-        
-
         connection.query(queryString, vals, function (err, result) {
-            console.log('insertOne results', result);
             if (err) {
-                console.log('error');
                 throw err;
             }
             cb(result);
@@ -73,7 +68,6 @@ var orm = {
         queryString += " WHERE ";
         queryString += condition;
 
-        console.log(queryString);
         connection.query(queryString, function(err, result) {
             if (err) {
                 throw err;
@@ -83,10 +77,10 @@ var orm = {
     },
     deleteOne: function(table, condition, cb){
         var queryString = `DELETE FROM ${table} WHERE ${condition};`;
-        connection.query(queryString, function(err, res){
+        connection.query(queryString, function (err, res) {
             if (err) throw err;
             cb(res);
-        })
+        });
     }
 };
 
