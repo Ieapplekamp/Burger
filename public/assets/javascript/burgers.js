@@ -40,4 +40,24 @@ $(function() {
       });
     });
   
+    $(".deleteBurger").on("click", function (event) {
+      event.preventDefault();
+      var id = $(this).data("id");
+      var newDevoured = $(this).data("throwaway");
+  
+      var newDevouredState = {
+        devoured: newDevoured
+      };
+
+        $.ajax('/api/burgers/' + id, {
+          type: 'DELETE',
+          data: newDevouredState
+        }).then(function(){
+            location.reload();
+        });
+
+      
+    });
+    
+  
   });
