@@ -2,7 +2,7 @@ var express = require("express");
 var router = require("./controllers/burger_controller.js");
 var exphbs = require("express-handlebars");
 
-var PORT = process.env.PORT || 3300;
+var PORT = process.env.PORT || 8800;
 
 var app = express();
 
