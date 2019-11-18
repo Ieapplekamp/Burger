@@ -1,5 +1,7 @@
-<div class='container jumbotron text-center'>
-    <h1>Order Up!</h1>
+<div class='jumbotron card-header text-center'>
+    <h1>Order Up! <i class="fas fa-drumstick-bite"></i></h1>
+    <hr>
+    <h5>Awe crud, a hungry mans food list</h5>
 </div>
 
 <div class='container'>
@@ -8,12 +10,10 @@
         <div class='col-6 align-items-center'>
             <form class='create-form'>
                 <div class='input-group mb-4'>
-                    <input type='text' name='name' class='form-control' id='burgerNew' placeholder='Add Your Burger Here!' aria-label='Add Your Burger' aria-describedby='button-addon2'>
-                    <div class='input-group-append'>
-                        <button type='submit' class='btn' id='submitButton'>
-                           <i class="fas fa-concierge-bell"></i>
-                        </button>
-                    </div>
+                    <input type='text' name='name' class='form-control' id='burgerNew' placeholder='Next Order!' aria-label='Next Order'>
+                    <button type='submit' class='btn' id='submitButton'>
+                        <i class=" animated tada slow infinite fas fa-concierge-bell"></i>
+                    </button>
                 </div>
             </form>
         </div>
@@ -22,32 +22,30 @@
     <div class='row'>
 
         <div class='col-6 text-center'>
-            <div class='card'>
-                <h3 class='card-header text-center'>Burgers To Eat</h3>
-                    <div class='card-body'>
-                        <ul> 
-                            {{#each burgers}}
-                                {{#unless devoured}}
-                                    {{> burgersFile/burgers-section devoured=false}}
-                                {{/unless}}
-                            {{/each}}
-                        </ul>
-                    </div>
+            <h3 class='mt-1 text-center'>Expedite!</h3>
+            <hr>
+            <div class='card-body'>
+                <ul> 
+                    {{#each burgers}}
+                        {{#unless devoured}}
+                            {{> burgersFile/burgers-section devoured=false}}
+                        {{/unless}}
+                    {{/each}}
+                </ul>
             </div>
         </div>
 
         <div class='col-6 text-center'>
-            <div class='card'>
-                <h3 class='card-header text-center'>Devoured Burgers</h3>
-                    <div class='card-body'>
-                        <ul>
-                            {{#each burgers}}
-                                {{#if devoured}}
-                                    {{> burgersFile/burgers-section devoured=true}}
-                                {{/if}}
-                            {{/each}}
-                        </ul>
-                    </div>
+            <h3 class='mt-1 text-center'>Orders Up!</h3>
+            <hr>
+            <div class='card-body'>
+                <ul>
+                    {{#each burgers}}
+                        {{#if devoured}}
+                            {{> burgersFile/burgers-section devoured=true}}
+                        {{/if}}
+                    {{/each}}
+                </ul>
             </div>
         </div>
 

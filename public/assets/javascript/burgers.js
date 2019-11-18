@@ -2,9 +2,14 @@ $(function() {
   
     $("#submitButton").on("click", function(event) {
         event.preventDefault();
+        var name = $("#burgerNew").val().trim()
+
+        if (name === "") {
+            return false;
+        }
 
         var newBurger = {
-            burger_name: $("#burgerNew").val().trim(),
+            burger_name: name,
             devoured: 0
         };
 

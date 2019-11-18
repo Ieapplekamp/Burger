@@ -2,8 +2,8 @@
 	{{burger_name}}
     {{#unless devoured}}
 
-    <button class="devoured" data-id="{{id}}" data-newdevoured="true">
-        Eat It!
+    <button type="button" class="devoured mt-2 ml-1 btn-dark rounded" data-id="{{id}}" data-newdevoured="true">
+        Ready!
     </button>
 
 	{{/unless}}
@@ -11,9 +11,9 @@
 
 <li>
     {{#if devoured}}
-    
-    <button class="deleteBurger" data-id="{{id}}" data-throwaway="true">
-        Throw Away!
+
+    <button type="button" class="deleteBurger mt-1 mb-1 btn-dark rounded" data-id="{{id}}" data-throwaway="true">
+        Trash!
     </button>
 
 	{{/if}}

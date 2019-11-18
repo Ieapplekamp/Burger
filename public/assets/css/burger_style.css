@@ -1,5 +1,16 @@
+body {
+    font-family: 'Permanent Marker', cursive;
+    background-color: #60dfcd;
+    background-image: linear-gradient(315deg, #60dfcd 0%, #1e9afe 74%);
+
+}
+.jumbotron {
+    background-color: #60dfcd;
+    background-image: linear-gradient(45deg, #60dfcd 0%, #1e9afe 74%);
+}
 h1 {
-    font-size: 4em;
+    font-size: 4.5em;
+    line-height: 1em;
 }
 ul {
     list-style-type: none;
