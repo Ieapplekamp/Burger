@@ -1,23 +1,25 @@
 $(function() {
   
     $("#submitButton").on("click", function(event) {
-      // Make sure to preventDefault on a submit event.
+      // preventDefault
       event.preventDefault();
-  
+
       var newBurger = {
-        name: $("#burgerNew").val()
+          burger_name: $("#burgerNew").val().trim(),
+          devoured: 0
       };
-        console.log(newBurger);
-      
-      // Send the POST request.
+
+      // Send the POST request
       $.ajax("/api/burgers", {
-        type: "POST",
-        data: newBurger
-      }).then(() => {
-        console.log("created new burger");
-        // Reload the page to get the updated list
-        location.reload();
-      });
+          type: "POST",
+          data: newBurger
+      }).then(
+          function() {
+              console.log("created new burger");
+              // Reload the page to get the updated list
+              location.reload();
+          }
+      );
     });
 
     $(".change-devour").on("click", function(event) {

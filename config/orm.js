@@ -57,7 +57,7 @@ var orm = {
         
 
         connection.query(queryString, vals, function (err, result) {
-            console.log(result);
+            console.log('insertOne results', result);
             if (err) {
                 console.log('error');
                 throw err;
